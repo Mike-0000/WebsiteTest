@@ -15,9 +15,13 @@ subdomain1App.use(express.static(path.join(__dirname, 'nl')));
 const subdomain2App = express();
 subdomain2App.use(express.static(path.join(__dirname, 'de')));
 
+const subdomain2App = express();
+subdomain3App.use(express.static(path.join(__dirname, 'at')));
+
 // Use vhost to handle subdomains
 app.use(vhost('nl.vanguardenterprisesllc.com', subdomain1App));
 app.use(vhost('de.vanguardenterprisesllc.com', subdomain2App));
+app.use(vhost('at.vanguardenterprisesllc.com', subdomain3App));
 app.use(vhost('vanguardenterprisesllc.com', rootApp));
 
 app.listen(port, () => {
