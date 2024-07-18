@@ -15,7 +15,7 @@ subdomain1App.use(express.static(path.join(__dirname, 'nl')));
 const subdomain2App = express();
 subdomain2App.use(express.static(path.join(__dirname, 'de')));
 
-const subdomain2App = express();
+const subdomain3App = express();
 subdomain3App.use(express.static(path.join(__dirname, 'at')));
 
 // Use vhost to handle subdomains
