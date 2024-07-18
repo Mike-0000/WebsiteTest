@@ -22,6 +22,7 @@ subdomain3App.use(express.static(path.join(__dirname, 'at')));
 app.use(vhost('nl.vanguardenterprisesllc.com', subdomain1App));
 app.use(vhost('de.vanguardenterprisesllc.com', subdomain2App));
 app.use(vhost('at.vanguardenterprisesllc.com', subdomain3App));
+app.use(vhost('us.vanguardenterprisesllc.com', rootApp));
 app.use(vhost('vanguardenterprisesllc.com', rootApp));
 
 app.listen(port, () => {
