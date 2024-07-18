@@ -9,15 +9,15 @@ const rootApp = express();
 rootApp.use(express.static(path.join(__dirname)));
 
 const subdomain1App = express();
-subdomain1App.use(express.static(path.join(__dirname, 'subfolder1')));
+subdomain1App.use(express.static(path.join(__dirname, 'nl')));
 
 const subdomain2App = express();
-subdomain2App.use(express.static(path.join(__dirname, 'subfolder2')));
+subdomain2App.use(express.static(path.join(__dirname, 'de')));
 
 // Use vhost to handle subdomains
-app.use(vhost('subdomain1.yourdomain.com', subdomain1App));
-app.use(vhost('subdomain2.yourdomain.com', subdomain2App));
-app.use(vhost('yourdomain.com', rootApp));
+app.use(vhost('nl.vanguardenterprisesllc.com', subdomain1App));
+app.use(vhost('de.vanguardenterprisesllc.com', subdomain2App));
+app.use(vhost('vanguardenterprisesllc.com', rootApp));
 
 app.listen(port, () => {
   console.log(`Server running at http://0.0.0.0:${port}/`);
